@@ -4,6 +4,7 @@ const logger = require("../utils/logger");
 
 exports.addPayment = async (req, res) => {
   try {
+    console.log("req.body-->> ", req.body);
     const payment = new Payment(req.body);
     await payment.save();
     logger.info("Payment added", { user_id: req.body.user_id });
